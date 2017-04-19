@@ -7,5 +7,5 @@ public interface AccountRepository {
 	
 	public boolean deleteAccount(int accountNumber);
 	
-	
+	public Account getAccount(int accountNumber);
 }

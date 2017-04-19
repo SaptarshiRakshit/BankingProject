@@ -1,6 +1,10 @@
 package com.capgemini.beans;
 
 public class Account {
+	
+	int accountNumber;
+	int amount;
+	
 	public int getAccountNumber() {
 		return accountNumber;
 	}
@@ -13,8 +17,7 @@ public class Account {
 	public void setAmount(int amount) {
 		this.amount = amount;
 	}
-	int accountNumber;
-	int amount;
+	
 	
 
 }

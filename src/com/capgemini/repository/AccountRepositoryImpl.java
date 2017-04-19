@@ -7,7 +7,6 @@ public class AccountRepositoryImpl implements AccountRepository {
 
 	@Override
 	public boolean saveAccount(Account acc) {
-		// TODO Auto-generated method stub
 		AccountStore.accountStore.put(acc.getAccountNumber(), acc);
 	
 		return true;
@@ -19,5 +18,10 @@ public class AccountRepositoryImpl implements AccountRepository {
 		return true;
 		else 
 			return false;
+	}
+
+	@Override
+	public Account getAccount(int accountNumber) {
+		return AccountStore.accountStore.get(accountNumber);
 	}
 }
