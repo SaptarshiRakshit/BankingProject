@@ -26,29 +26,35 @@ public class AccountServiceImpl implements AccountService {
 
 	@Override
 	public boolean depositAccount(int accountNumber, int amount) {
-		// TODO Auto-generated method stub
+		
 		return false;
 	}
 
 	@Override
 	public boolean withdrawtAccount(int accountNumber, int amount) {
-		// TODO Auto-generated method stub
+		
 		return false;
 	}
 
 	@Override
 	public boolean fundTransfer(int fromAccountNumber, int toAccountNumber, int amount) {
-		// TODO Auto-generated method stub
+		
 		return false;
 	}
 
 	@Override
 	public Account viewAccount(int accountNumber) throws InvalidAccountNumberException {
-		Account acc = AccountStore.accountStore.get(accountNumber);
+		Account acc = new AccountRepositoryImpl().getAccount(accountNumber);
 		if(acc != null)
 			return acc;
 		else
 			throw new InvalidAccountNumberException("Account Number Not Found In Store");
+	}
+
+	@Override
+	public boolean deleteAccount(int accountNumber) throws InvalidAccountNumberException {
+		Account acc = viewAccount(accountNumber);
+		return new AccountRepositoryImpl().deleteAccount(accountNumber);
 	}
 
 }

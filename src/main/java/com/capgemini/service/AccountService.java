@@ -13,6 +13,8 @@ public interface AccountService {
 	
 	public boolean fundTransfer(int fromAccountNumber ,int toAccountNumber , int amount);
 
-	 public Account viewAccount(int accountNumber) throws InvalidAccountNumberException;
+	public Account viewAccount(int accountNumber) throws InvalidAccountNumberException;
+	
+	public boolean deleteAccount(int accountNumber) throws InvalidAccountNumberException;
 	 
 }
