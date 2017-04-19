@@ -14,7 +14,7 @@ public class AccountServiceImpl implements AccountService {
 		AccountRepository accRepo = new AccountRepositoryImpl();
 		Account a = accRepo.getAccount(acc.getAccountNumber());
 		if(a == null){
-			if(acc.getAmount()>5000){
+			if(acc.getAmount()>=5000){
 				return accRepo.saveAccount(acc);
 			}
 			else
