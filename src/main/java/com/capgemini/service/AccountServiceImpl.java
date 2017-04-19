@@ -43,8 +43,12 @@ public class AccountServiceImpl implements AccountService {
 	}
 
 	@Override
-	public Account viewAccount(int accountNumber) {
-		return AccountStore.accountStore.get(accountNumber);
+	public Account viewAccount(int accountNumber) throws InvalidAccountNumberException {
+		Account acc = AccountStore.accountStore.get(accountNumber);
+		if(acc != null)
+			return acc;
+		else
+			throw new InvalidAccountNumberException("Account Number Not Found In Store");
 	}
 
 }
